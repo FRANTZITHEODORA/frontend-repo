@@ -10,7 +10,7 @@ function App() {
   // Χρήση σωστού URL ανάλογα με το περιβάλλον (localhost ή παραγωγή)
   const API_URL = process.env.NODE_ENV === 'production'
     ? 'https://myapp.railway.app/api/data'
-    : 'http://localhost:5000/api/data';
+    : 'http://localhost:8080/api/data';
 
   useEffect(() => {
     axios.get(API_URL)
