@@ -15,12 +15,14 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
+    "serve": "^14.2.3",
     "tar": "^7.4.3",
     "web-vitals": "^4.2.3"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development react-app-rewired start",
     "build": "cross-env NODE_ENV=production react-app-rewired build",
+    "serve": "serve -s build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
