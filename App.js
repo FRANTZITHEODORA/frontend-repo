@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/data') // Θύρα 5000
+    axios.get('https://backend-repo-production-cb1a.up.railway.app/api/data') // Θύρα 5000
       .then(response => {
         setData(response.data);
       })
