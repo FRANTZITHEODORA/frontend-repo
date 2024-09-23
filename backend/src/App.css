@@ -1,0 +1,44 @@
+/* App.css */
+
+/* Γενικό στυλ */
+body {
+  background-color: #000; /* Μαύρο background */
+  color: #fff; /* Λευκές γραμματοσειρές */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Στυλ κάρτας */
+.custom-card {
+  background-color: #222; /* Σκούρο γκρι background για κάρτα */
+  color: #fff; /* Λευκές γραμματοσειρές */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Σκιά για επαγγελματικό στυλ */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: #00FFFF; /* Κυανό χρώμα για τους τίτλους */
+}
+
+.card-text {
+  color: #fff; /* Λευκές γραμματοσειρές */
+}
+
+a {
+  color: #00FFFF; /* Κυανό χρώμα για τα links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Στρογγυλή εικόνα */
+.rounded-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); /* Ελαφριά σκιά στην εικόνα */
+}
