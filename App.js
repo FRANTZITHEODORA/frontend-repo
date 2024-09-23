@@ -5,8 +5,11 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    console.log('Fetching data from the API...');
+    
     axios.get('https://backend-repo-production-cb1a.up.railway.app/api/data') // Θύρα 5000
       .then(response => {
+        console.log('Data fetched successfully:', response.data);
         setData(response.data);
       })
       .catch(error => {
@@ -15,8 +18,11 @@ function App() {
   }, []);
 
   if (!data) {
+    console.log('Data is not yet available, loading...');
     return <div>Loading...</div>;
   }
+
+  console.log('Data loaded:', data);
 
   return (
     <div className="App">
@@ -55,4 +61,3 @@ function App() {
 }
 
 export default App;
-
