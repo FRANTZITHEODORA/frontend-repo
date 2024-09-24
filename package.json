@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://frantzitheodora.github.io/frontend-repo/",
+  "homepage": "https://frantzitheodora.github.io/",
   "proxy": "https://backend-repo-production-cb1a.up.railway.app/",
   "dependencies": {
     "@endo/captp": "^4.3.0",
