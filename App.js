@@ -3,23 +3,49 @@ import axios from 'axios';
 
 function App() {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null); // Για την αποθήκευση τυχόν σφαλμάτων
+  const [loading, setLoading] = useState(true); // Για την παρακολούθηση της διαδικασίας φόρτωσης
 
   useEffect(() => {
     console.log('Fetching data from the API...');
-    
-    axios.get('https://backend-repo-production-cb1a.up.railway.app/api/data') // Θύρα 5000
-      .then(response => {
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://backend-repo-production-cb1a.up.railway.app/api/data');
         console.log('Data fetched successfully:', response.data);
         setData(response.data);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error fetching data:', error);
-      });
+        let errorMessage = 'An error occurred while fetching data.'; // Γενικό μήνυμα σφάλματος
+
+        // Ελέγχουμε τον τύπο του σφάλματος
+        if (error.response) {
+          // Η αίτηση έγινε και ο server απάντησε με κατάσταση εκτός του 2xx
+          errorMessage = `Error: ${error.response.status} - ${error.response.statusText}`;
+        } else if (error.request) {
+          // Η αίτηση έγινε αλλά δεν ελήφθη απάντηση
+          errorMessage = 'Error: No response received from the server.';
+        } else {
+          // Κάτι συνέβη κατά τη ρύθμιση της αίτησης
+          errorMessage = `Error: ${error.message}`;
+        }
+
+        setError(errorMessage); // Αποθηκεύουμε το σφάλμα
+      } finally {
+        setLoading(false); // Ανεξάρτητα από την έκβαση, σταματάμε την φόρτωση
+      }
+    };
+
+    fetchData();
   }, []);
 
-  if (!data) {
+  if (loading) {
     console.log('Data is not yet available, loading...');
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>; // Εμφάνιση σφάλματος αν υπάρχει
   }
 
   console.log('Data loaded:', data);
