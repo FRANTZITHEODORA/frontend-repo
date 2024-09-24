@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const cors = require('cors');
+
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
