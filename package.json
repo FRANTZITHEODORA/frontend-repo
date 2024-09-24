@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://frontend-repo-production.up.railway.app/",
+  "homepage": "https://frantzitheodora.github.io/frontend-repo/",
   "proxy": "https://backend-repo-production-cb1a.up.railway.app/",
   "dependencies": {
     "@endo/captp": "^4.3.0",
@@ -24,6 +24,8 @@
     "start": "cross-env NODE_ENV=development react-app-rewired start",
     "build": "cross-env NODE_ENV=production react-app-rewired build",
     "serve": "serve -s build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +47,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "https-browserify": "^1.0.0",
     "react-app-rewired": "^2.2.1",
@@ -56,3 +59,4 @@
     "webpack-dev-server": "^5.1.0"
   }
 }
+

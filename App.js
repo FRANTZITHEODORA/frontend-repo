@@ -11,7 +11,7 @@ function App() {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://backend-repo-production-cb1a.up.railway.app/api/data');
+        const response = await axios.get("https://backend-repo-production-cb1a.up.railway.app/api/data");
         console.log('Data fetched successfully:', response.data);
         setData(response.data);
       } catch (error) {
