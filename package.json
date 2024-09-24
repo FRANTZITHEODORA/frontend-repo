@@ -2,7 +2,8 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://frontend-repo-production.up.railway.app/",
+  "proxy": "https://backend-repo-production-cb1a.up.railway.app/",
   "dependencies": {
     "@endo/captp": "^4.3.0",
     "@endo/eventual-send": "^1.2.5",
