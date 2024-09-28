@@ -1,15 +1,31 @@
 {
   "files": {
-    "main.css": "/frontend-repo/static/css/main.a8cac296.css",
-    "main.js": "/frontend-repo/static/js/main.4ad42e92.js",
-    "static/js/462.67adf648.chunk.js": "/frontend-repo/static/js/462.67adf648.chunk.js",
+    "main.css": "/frontend-repo/static/css/main.d1c23d5c.css",
+    "main.js": "/frontend-repo/static/js/main.8d0e1784.js",
+    "static/js/462.6a9e33ee.chunk.js": "/frontend-repo/static/js/462.6a9e33ee.chunk.js",
+    "static/media/ME.jpg": "/frontend-repo/static/media/ME.56f4c9476a6c80d3b1b9.jpg",
+    "static/media/imPr1.jpg": "/frontend-repo/static/media/imPr1.d152ac8a45c207cd2250.jpg",
+    "static/media/imgPr3.jpg": "/frontend-repo/static/media/imgPr3.29953f9d1d09fab7b471.jpg",
+    "static/media/imPr6.jpg": "/frontend-repo/static/media/imPr6.b34484ae4d03b2e70124.jpg",
+    "static/media/imPr4.jpg": "/frontend-repo/static/media/imPr4.42da12a6ac7eeafe7287.jpg",
+    "static/media/cv frantzi (2).zip": "/frontend-repo/static/media/cv frantzi (2).88ae7407a4d5903b71af.zip",
+    "static/media/imPr5.jpg": "/frontend-repo/static/media/imPr5.dacb47b1b6a0fd3df54e.jpg",
+    "static/media/imPr2.jpg": "/frontend-repo/static/media/imPr2.8340129a6cd4ee202880.jpg",
+    "static/media/imPrm2.jpg": "/frontend-repo/static/media/imPrm2.6f1292f410576213fe4b.jpg",
+    "static/media/social-media.png": "/frontend-repo/static/media/social-media.c8f75897d8bf0d068e98.png",
+    "static/media/customer-service.png": "/frontend-repo/static/media/customer-service.e842e96da93840e2f278.png",
+    "static/media/user.png": "/frontend-repo/static/media/user.557587208eb9e232f2ca.png",
+    "static/media/location.png": "/frontend-repo/static/media/location.39261a4c95eecf324099.png",
+    "static/media/phone-call.png": "/frontend-repo/static/media/phone-call.4b7d3b664293d46d47f0.png",
+    "static/media/mail.png": "/frontend-repo/static/media/mail.045d044ecc11048aeecb.png",
+    "static/media/contact-mail.png": "/frontend-repo/static/media/contact-mail.85b72314fa30bc76799a.png",
     "index.html": "/frontend-repo/index.html",
-    "main.a8cac296.css.map": "/frontend-repo/static/css/main.a8cac296.css.map",
-    "main.4ad42e92.js.map": "/frontend-repo/static/js/main.4ad42e92.js.map",
-    "462.67adf648.chunk.js.map": "/frontend-repo/static/js/462.67adf648.chunk.js.map"
+    "main.d1c23d5c.css.map": "/frontend-repo/static/css/main.d1c23d5c.css.map",
+    "main.8d0e1784.js.map": "/frontend-repo/static/js/main.8d0e1784.js.map",
+    "462.6a9e33ee.chunk.js.map": "/frontend-repo/static/js/462.6a9e33ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8cac296.css",
-    "static/js/main.4ad42e92.js"
+    "static/css/main.d1c23d5c.css",
+    "static/js/main.8d0e1784.js"
   ]
 }
