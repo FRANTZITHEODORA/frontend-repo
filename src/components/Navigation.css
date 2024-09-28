@@ -1,0 +1,75 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Κωδικός CSS παρακάτω */
+
+.navigation {
+  position: fixed; 
+  bottom: 0; /* Διατηρείται στο κάτω μέρος για μικρές οθόνες */
+  left: 0;
+  width: 100%;
+  height: 60px; 
+  background-color: #233131;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
+
+@media (min-width: 769px) {
+  .navigation {
+    bottom: auto; /* Αλλαγή θέσης σε μεγάλες οθόνες */
+    top: 0; /* Τοποθέτηση στο επάνω μέρος */
+  }
+}
+
+/* Διατήρηση του οριζόντιου μενού */
+.custom-ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.custom-li {
+  position: relative;
+  flex: 1; /* Ισοκατανομή του χώρου */
+  text-align: center; /* Κεντράρισμα του κειμένου */
+}
+
+.icon img {
+  width: 30px; /* Μπορείς να αλλάξεις το μέγεθος */
+  height: 30px; /* Μπορείς να αλλάξεις το μέγεθος */
+  margin-top: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column; /* Στήλη για το icon και το κείμενο */
+  align-items: center; /* Κεντράρισμα */
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.list.active .text {
+  display: block; /* Εμφάνιση κειμένου μόνο όταν είναι ενεργό */
+}
+
+.text {
+  display: none; /* Αρχικά κρυφό το κείμενο */
+}
+
+.list:hover .text {
+  display: block; /* Εμφάνιση κειμένου όταν γίνεται hover */
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    height: 60px; /* Ύψος μενού */
+  }
+}

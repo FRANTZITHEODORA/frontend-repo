@@ -1,44 +1,344 @@
-/* App.css */
-
 /* Γενικό στυλ */
-body {
-  background-color: #000; /* Μαύρο background */
-  color: #fff; /* Λευκές γραμματοσειρές */
+body { 
+  background-color: #000;
+  color: #fff;
   font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  margin: 0; /* Αφαίρεση προεπιλεγμένου περιθωρίου */
 }
 
-/* Στυλ κάρτας */
+ul:not(.custom-ul) {
+  list-style: none;
+}
+
+li:not(.custom-li) {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  padding-left: 15px;
+  cursor: default;
+}
+
+li:not(.custom-li) > small {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: #383E46;
+  display: block;
+}
+
+li:not(.custom-li) > span {
+  position: relative;
+}
+
+li:not(.custom-li) > span::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: -19px;
+  font-weight: bold;
+  top: 7px;
+  background-color: #E5E0F0;
+  border: 2px solid #4FBA97;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+ul li:not(.custom-li):hover > span::before {
+  animation: pop 1.5s infinite;
+}
+
+ul li:not(.custom-li):hover span {
+  color: #558B82;
+}
+
+ul:not(.custom-ul) > :not(:last-child) {
+  margin-bottom: 12px;
+}
+
+ul:not(.custom-ul) > :not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  bottom: -20px;
+  width: 2px;
+  background-color: #4FBA97;
+  z-index: 0;
+  font-weight: bold;
+}
+@keyframes pop {
+  from {
+    box-shadow: 0 0 0 0px #3ddcc1;
+  }
+  to {
+    box-shadow: 0 0 0 5px #2FA59000;
+  }
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.containerPrIm {
+  display: flex;
+  flex-wrap: wrap; /* Επιτρέπει τη διάταξη σε πολλές γραμμές */
+}
+
+.card-c {
+  width: 100%; /* Ολόκληρο πλάτος για μικρές οθόνες */
+  height: 300px; /* Ύψος εικόνας σε μικρές οθόνες */
+  transition: background-size 0.5s ease; /* Ομαλή μετάβαση */
+}
+
+@media (min-width: 768px) { /* Για οθόνες μεγαλύτερες από 768px */
+  .card-c {
+    height: 500px; /* Ύψος εικόνας σε μεγάλες οθόνες */
+    width: 100%; /* Ολόκληρο πλάτος για μεγάλες οθόνες */
+    background-size: cover; /* Κάλυψη ολόκληρου του div */
+  }
+}
+
+.profile-container {
+  display: flex;
+  align-items: center; /* Κεντράρισμα κατακόρυφα */
+  gap: 50px; /* Απόσταση μεταξύ εικόνας και τίτλου */
+  margin: 10px;
+}
+
+.application-title h1 {
+  color: #3ddcc1; /* Χρώμα τίτλου */
+  font-size: 24px;
+  margin-top: 100px;
+  font-weight: bolder;
+}
+
 .custom-card {
-  background-color: #222; /* Σκούρο γκρι background για κάρτα */
-  color: #fff; /* Λευκές γραμματοσειρές */
+  background-color: #222;
+  color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Σκιά για επαγγελματικό στυλ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .card-title {
-  color: #00FFFF; /* Κυανό χρώμα για τους τίτλους */
+  color: #3ddcc1;
+  margin-left: 30px;
+  font-weight: bolder;
 }
 
 .card-text {
-  color: #fff; /* Λευκές γραμματοσειρές */
+  color: #fff;
+  font-weight: bold;
 }
 
-a {
-  color: #00FFFF; /* Κυανό χρώμα για τα links */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Στρογγυλή εικόνα */
-.rounded-image {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+/* Εικόνα προφίλ */
+.rounded-profile {
+  width: 200px;
+  height: 300px;
   object-fit: cover;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); /* Ελαφριά σκιά στην εικόνα */
+}
+
+/* Κουμπί με gradient */
+.custom-button {
+  background: linear-gradient(45deg, #00FFFF, #008080);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bolder;
+}
+
+.custom-button:hover {
+  background: linear-gradient(45deg, #008080, #00FFFF);
+}
+
+.social-buttons {
+  display: flex;
+  gap: 20px; /* Απόσταση μεταξύ των κουμπιών */
+}
+
+.social-button {
+  background-color: #000000; /* Φόντο κουμπιού */
+  border: none; /* Αφαίρεση περιγράμματος */
+  border-radius: 50%; /* Στρογγυλές γωνίες */
+  width: 70px; /* Πλάτος κουμπιού */
+  height: 70px; /* Ύψος κουμπιού */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Κεντράρισμα περιεχομένου */
+  cursor: pointer; /* Χέρι όταν επιπλέει πάνω από το κουμπί */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Σκιά για βάθος */
+  font-weight: bolder;
+}
+
+/* Skill και άλλες κάρτες */
+.skill-card {
+  background-color: #000;
+  border: 2px solid #3ddcc1;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+/* Κοινό ύψος για όλες τις κάρτες */
+.equal-height-card {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .equal-height-card {
+    margin-bottom: 20px;
+  }
+
+  .profile-container {
+    flex-direction: column; /* Κάθετα διάταξη για μικρές οθόνες */
+    margin-right: 0; /* Αφαίρεση margin για μικρές οθόνες */
+  }
+
+  .rounded-profile {
+    width: 150px; /* Μειωμένο πλάτος */
+    height: 200px; /* Μειωμένο ύψος */
+  }
+
+  .custom-card {
+    padding: 15px; /* Μειωμένο padding */
+    border: none; /* Adjust card styles as needed */
+    width: 100%; /* Κάνει την κάρτα 100% πλάτος */
+  }
+
+  .containerPrIm {
+    flex-direction: column; /* Κάθετη διάταξη για μικρές οθόνες */
+  }
+
+  .application-title h1 {
+    font-size: 20px; /* Μείωση μεγέθους τίτλου */
+  }
+
+  .phone-frame {
+    width: 100%; /* Κάνει την κάρτα κινητού 100% πλάτος */
+  }
+}
+
+.page-title {
+  font-size: 18px;  /* Μείωση του μεγέθους της γραμματοσειράς */
+  text-align: left;  /* Τοποθέτηση στα αριστερά */
+  margin-top: 70px;
+  color: #3ddcc1; 
+  font-weight: bolder; /* Χρώμα του τίτλου */
+}
+
+.social-image-container {
+  display: flex;
+  align-items: center; /* Κεντράρισμα κατακόρυφα */
+}
+
+.social-image {
+  width: 200px; /* Πλάτος εικόνας */
+  height: 200px; /* Ύψος εικόνας */
+  margin-right: 20px;
+  margin-left: 20px; /* Απόσταση μεταξύ εικόνας και κουμπιών */
+  border-radius: 10px;
+}
+
+.small-social-image {
+  width: 25px; /* Πλάτος εικόνας */
+  height: 25px; /* Ύψος εικόνας */
+  margin-right: 1px;
+  margin-left: 1px; /* Απόσταση μεταξύ εικόνας και κουμπιών */
+  border-radius: 10px;
+}
+
+.contact-info-container {
+  display: flex; /* Χρήση flexbox για την τοποθέτηση των στοιχείων */
+  align-items: center; /* Κεντράρισμα κατακόρυφα */
+  gap: 15px; /* Απόσταση μεταξύ των στοιχείων */
+}
+
+.contact-image {
+  width: 120px; /* Πλάτος εικόνας */
+  height: 120px; /* Ύψος εικόνας */
+  border-radius: 10px; 
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.small-text {
+  font-size: 0.9rem; /* Μικρότερη γραμματοσειρά */
+  color: #6c757d; /* Χρώμα κειμένου */
+  line-height: 1; /* Ρυθμίστε το ύψος γραμμής */
+  display: block; /* Βεβαιώνει ότι είναι μπλοκ στοιχείο */
+  margin-bottom: 1px; /* Απόσταση από το επόμενο στοιχείο */
+  font-weight: bold;
+}
+
+.phone-frame {
+  max-width: 100%;
+  margin: auto;
+  background-color: black;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(47, 203, 188, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.highlight {
+  color: #3ddcc1;
+}
+
+.contact-info-container {
+  display: flex; /* Χρήση flexbox για την τοποθέτηση των στοιχείων */
+  align-items: center; /* Κεντράρισμα κατακόρυφα */
+  gap: 15px; /* Απόσταση μεταξύ των στοιχείων */
+  flex-wrap: wrap; /* Επιτρέπει τη διάταξη σε πολλές γραμμές εάν χρειάζεται */
+}
+
+.contact-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%; /* Στρογγυλή εικόνα */
+  margin-left: 50px; /* Απόσταση από τα στοιχεία */
+}
+
+.contact-details {
+  font-size: 1rem; /* Μέγεθος κειμένου */
+  color: #3ddcc1; /* Χρώμα κειμένου */
+  margin: 20px;
+}
+
+@media (max-width: 576px) {
+  .contact-info-container {
+    flex-direction: column; /* Κάθετη διάταξη για μικρές οθόνες */
+    align-items: flex-start; /* Στοιχίζονται αριστερά */
+  }
+
+  .contact-image {
+    height: 200px;
+    width: 100%;
+    margin-right: 0; /* Αφαίρεση περιθωρίου */
+    margin-left: 0; /* Αφαίρεση περιθωρίου */
+    margin-bottom: 10px; /* Απόσταση κάτω από την εικόνα */
+  }
+
+  .contact-details {
+    text-align: left; /* Στοιχίζεται αριστερά */
+  }
+}
+
+ /* Στυλ για μικρές οθόνες */
+@media (max-width: 576px) {
+  .custom-button {
+    width: 50px; /* Μικρότερο πλάτος κουμπιού */
+    height: 50px; /* Διατηρούμε το ύψος */
+    font-size: 0; /* Κρύβουμε το κείμενο του κουμπιού μειώνοντας το μέγεθος της γραμματοσειράς σε 0 */
+    padding: 0; /* Μηδενίζουμε το padding */
+  }
 }
